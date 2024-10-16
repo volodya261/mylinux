@@ -1,0 +1,11 @@
+- name: settings arch 
+  hosts: all
+  become: yes
+  tasks:
+
+    - name: install package
+      community.general.pacman:
+        name: waybar
+        state: present
+
+  
