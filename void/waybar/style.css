@@ -61,6 +61,10 @@ tooltip {
     min-height: 10px
 }
 
+#memory {
+    color:rgb(0, 115, 255)
+}
+
 #backlight,
 #battery,
 #temperature,
@@ -83,7 +87,7 @@ tooltip {
 #custom-sr_end,
 #custom-rl_end,
 #custom-rr_end {
-    color: @main-fg;
+    /* color: @main-fg; */
     background: @main-bg;
     opacity: 1;
     margin: 4px 0px 4px 0px;
