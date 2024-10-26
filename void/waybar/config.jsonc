@@ -6,40 +6,77 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 28,
+    "height": 25,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
     "reload_style_on_change": true,
 
     "modules-left": [
-        "sway/mode",
-        "sway/scratchpad",
+        "custom/l_end",
         "custom/media",
-	"hyprland/workspaces"
-    ],
-    "modules-center": [
-	"clock"
-    ],
-    "modules-right": [
-        "mpd",
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
+        "custom/r_end"
+    ],
+    "modules-center": [
+        "custom/l_end",
+        "idle_inhibitor",   
+        "hyprland/workspaces",
+	    "custom/notifications",
+        "custom/r_end"
+    ],
+    "modules-right": [
+        "custom/l_end",
+        "mpd",
+        "pulseaudio",
+        //"network",
+        "power-profiles-daemon",
+        "custom/r_end",
+        "custom/l_end",
         "backlight",
         "keyboard-state",
         "hyprland/language",
         "battery",
         "battery#bat2",
+        "custom/r_end",
+        "custom/l_end",
         "tray",
-        "custom/power"
+        "clock",
+        "custom/r_end"
     ],
     // Modules configuration
-     "hyprland/workspaces": {
+      "custom/notifications": {
+        "format": "{icon} {}",
+        "format-icons": {
+            "email-notification": "<span foreground='white'><sup></sup></span>",
+            "chat-notification": "󱋊<span foreground='white'><sup></sup></span>",
+            "warning-notification": "󱨪<span foreground='yellow'><sup></sup></span>",
+            "error-notification": "󱨪<span foreground='red'><sup></sup></span>",
+            "network-notification": "󱂇<span foreground='white'><sup></sup></span>",
+            "battery-notification": "󰁺<span foreground='white'><sup></sup></span>",
+            "update-notification": "󰚰<span foreground='white'><sup></sup></span>",
+            "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
+            "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
+            "notification": "<span foreground='white'><sup></sup></span>",
+            "dnd": "",
+            "none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which dunstctl",
+        "exec": "notifications.py",
+        "on-scroll-down": "sleep 0.1 && dunstctl history-pop",
+        "on-click": "dunstctl set-paused toggle",
+        "on-click-middle": "dunstctl history-clear",
+        "on-click-right": "dunstctl close-all",
+        "interval": 1,
+        "tooltip": true,
+        "escape": true
+    }, 
+    
+    
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "active-only": false,
@@ -60,16 +97,7 @@
             "unlocked": ""
         }
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
+
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -109,7 +137,7 @@
     },
    
     "hyprland/language": {
-	"format": "<span color='#fab387'>󰌏</span> {}",
+	"format": "<span>󰌏</span> {}",
 	"format-en": "EN",
 	"format-ru": "RU",
      },
@@ -189,27 +217,19 @@
         "power-saver": ""
       }
     },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+     //   "format-bluetooth": "{volume}% {icon} {format_source}",
+     //   "format-bluetooth-muted": " {icon} {format_source}",
+     //   "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+     //       "hands-free": "",
+     //       "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -240,5 +260,51 @@
 			"suspend": "systemctl suspend",
 			"hibernate": "systemctl hibernate"
 		}
+    },
+
+
+    // modules for padding //
+
+    "custom/l_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/r_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/padd": {
+        "format": "  ",
+        "interval" : "once",
+        "tooltip": false
     }
+
 }
