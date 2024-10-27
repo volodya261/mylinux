@@ -2,21 +2,19 @@
     border: none;
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 14px;
-    min-height: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
 }
 
 @import "theme.css";
 
 window#waybar {
-    background: @bar-bg;
-}
-
-tooltip {
-    background: @main-bg;
-    color: @main-fg;
-    border-radius: 7px;
-    border-width: 0px;
+    border-radius: 20;
+    background-image: linear-gradient(45deg, rgba(63,94,251,1) 0%, rgba(6, 66, 115, 1) 55%, rgba(63,94,251,1) 100%);
+    transition-property: background-color;
+    transition-duration: .5s;
+    opacity: 0.9;
 }
 
 #workspaces button {
@@ -62,12 +60,21 @@ tooltip {
 }
 
 #memory {
-    color:rgb(0, 115, 255)
+    color:rgb(60, 255, 0)
+}
+
+#temperature {
+    color:rgb(253, 146, 23)
+}
+
+#cpu {
+    color:rgb(2, 118, 250)
 }
 
 #backlight,
 #battery,
 #temperature,
+#media,
 #bluetooth,
 #clock,
 #cpu,
@@ -91,8 +98,9 @@ tooltip {
     background: @main-bg;
     opacity: 1;
     margin: 4px 0px 4px 0px;
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 0px solid #181825;
 }
 
 #workspaces,
