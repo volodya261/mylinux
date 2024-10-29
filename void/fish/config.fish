@@ -4,4 +4,6 @@ if status is-login
     end
 end
 
-alias xbps-install='sudo xbps-install -S'
+alias xi='sudo xbps-install -S'
+alias lowcpu='sudo $HOME/.config/hypr/cpupower/low-power.sh'
+alias defcpu='sudo $HOME/.config/hypr/cpupower/default-cpu.sh'
