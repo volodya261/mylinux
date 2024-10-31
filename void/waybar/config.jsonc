@@ -5,8 +5,10 @@
     
 	"width": 1300,
     "layer": "top",
+    	"output": "eDP-1",
+	    "output": ["eDP-1"],
     "position": "bottom",
-    "height": 25,
+    "height": 23,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,

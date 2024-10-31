@@ -11,7 +11,7 @@
 
 window#waybar {
     border-radius: 20;
-    background-image: linear-gradient(45deg, rgb(251, 85, 63) 0%, rgb(65, 49, 42) 55%, rgb(83, 163, 100) 100%);
+    background-image: linear-gradient(45deg, rgb(75, 69, 69) 0%, rgb(75, 69, 69) 55%, rgb(75, 69, 69) 100%);
     transition-property: background-color;
     transition-duration: .5s;
     opacity: 0.9;
@@ -60,15 +60,15 @@ window#waybar {
 }
 
 #memory {
-    color:rgb(60, 255, 0)
+    color:rgb(255, 255, 255)
 }
 
 #temperature {
-    color:rgb(253, 146, 23)
+    color:rgb(255, 255, 255)
 }
 
 #cpu {
-    color:rgb(2, 118, 250)
+    color:rgb(255, 255, 255)
 }
 
 #backlight,
