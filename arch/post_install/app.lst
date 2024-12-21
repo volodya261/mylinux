@@ -70,8 +70,8 @@ lib32-libva-mesa-driver
 vulkan-mesa-layers 
 opencl-rusticl-mesa 
 lib32-opencl-rusticl-mesa
-
-python-pyamdgpuinfo
-yandex-browser
-yandex-disk
-lens-bin
+slurpi
+grim
+wl-clipboard
+xdg-desktop-portal-gtk
+swappy
