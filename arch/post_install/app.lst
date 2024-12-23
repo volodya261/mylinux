@@ -49,8 +49,9 @@ amd-ucode
 obsidian
 firefox
 kitty
-dolphin
-ark
+thunar
+gvfs
+file-roller
 vim
 
 telegram-desktop

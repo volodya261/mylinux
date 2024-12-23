@@ -1,0 +1,5 @@
+
+@theme "/home/ultra/.local/share/rofi/themes/launchpad.rasi"
+configuration {
+  show-icons:         true;
+}
